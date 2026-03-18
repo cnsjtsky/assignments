@@ -81,10 +81,10 @@ public class Main {
                 System.out.println("Invalid Task Number.");
         }
 
-        runMenu(); // recursion instead of loop
+        runMenu();
     }
 
-    // ================= TASK 1 =================
+    //  TASK 1
     public static void printDigits(int n) {
         if (n < 10) {
             System.out.println(n);
@@ -94,14 +94,14 @@ public class Main {
         System.out.println(n % 10);
     }
 
-    // ================= TASK 2 =================
+    //  TASK 2
     public static double findSum(int n) {
         if (n == 0) return 0;
         int val = sc.nextInt();
         return val + findSum(n - 1);
     }
 
-    // ================= TASK 3 =================
+    //  TASK 3
     public static String isPrime(int n, int i) {
         if (n <= 1) return "Composite";
         if (n == 2) return "Prime";
@@ -110,26 +110,26 @@ public class Main {
         return isPrime(n, i + 1);
     }
 
-    // ================= TASK 4 =================
+    // TASK 4
     public static int factorial(int n) {
         if (n <= 1) return 1;
         return n * factorial(n - 1);
     }
 
-    // ================= TASK 5 =================
+    // TASK 5
     public static int fibonacci(int n) {
         if (n == 0) return 0;
         if (n == 1) return 1;
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
-    // ================= TASK 6 =================
+    // TASK 6
     public static int power(int a, int n) {
         if (n == 0) return 1;
         return a * power(a, n - 1);
     }
 
-    // ================= TASK 7 =================
+    //  TASK 7
     public static void reverseInput(int n) {
         if (n == 0) return;
         int x = sc.nextInt();
@@ -137,20 +137,20 @@ public class Main {
         System.out.print(x + " ");
     }
 
-    // ================= TASK 8 =================
+    // TASK 8
     public static boolean isAllDigits(String s) {
         if (s.isEmpty()) return true;
         if (!Character.isDigit(s.charAt(0))) return false;
         return isAllDigits(s.substring(1));
     }
 
-    // ================= TASK 9 =================
+    //  TASK 9
     public static int countChars(String s) {
         if (s.isEmpty()) return 0;
         return 1 + countChars(s.substring(1));
     }
 
-    // ================= TASK 10 =================
+    // TASK 10
     public static int gcd(int a, int b) {
         if (b == 0) return a;
         return gcd(b, a % b);

@@ -1,56 +1,124 @@
- ADS Assignment 1: Recursion
+ ADS Assignment 2
 Name: Abdysadykov Daniyar
 Group: IT - 2504
+# Mini Banking System (ADS Assignment 2)
+## Ab0out the Project
+
+This project is a simple banking system written in Java.  
+The main goal was to use different data structures and show how they work in a real life situation.
+
+In this system, a user can create accounts, deposit and withdraw money, manage transactions, and simulate basic banking operations such as bill payments and account requests.
+
+## What I Implemented
+
+### Bank Accounts using LinkedList
+
+All accounts are stored in a LinkedList.  
+I chose LinkedList because the number of accounts can change, and it allows easy addition and searching.
+
+The system supports adding a new account, displaying all accounts, and searching by username.
+
+### Deposit and Withdraw
+
+Each account has a balance that can be updated.  
+Deposit adds money to the account.  
+Withdraw removes money only if there is enough balance.
+
+### Transaction History using Stack
+
+I used a Stack to store transactions.  
+
+This allows viewing the last transaction and undoing the last operation.  
+
+Stack works in LIFO order which means the last operation is handled first.
+
+### Bill Payment System using Queue
+
+Bill payments are stored in a Queue.  
+
+The first bill that is added is the first one processed.  
+
+This follows FIFO behavior which is similar to a real waiting line.
+
+### Account Opening Requests using Queue
+
+New account requests are also stored in a Queue.  
+
+The admin can view all requests and approve them one by one.  
+
+Approved accounts are then added to the main system.
+
+### Fixed Accounts using Array
+
+I used an array to store three predefined accounts.  
+
+This part shows how arrays work as a fixed size structure in memory.
+
+## Menus in the Program
+
+### Bank Menu
+
+Add account  
+Show accounts  
+Search account  
+Deposit  
+Withdraw  
+Add bill  
+Submit request  
+Show last transaction  
+Undo transaction  
+Show history  
+
+### ATM Menu
+
+Check balance  
+Withdraw money  
+
+### Admin Menu
+
+View account requests  
+Approve requests  
+View bills  
+Process bills  
+
+## How to Run the Program
+
+Open the project in IntelliJ IDEA  
+Run the Main class  
+Follow the menu options in the console  
+
+## Screenshots
+Main Menu
+<img width="1904" height="1079" alt="image" src="https://github.com/user-attachments/assets/5a3253a5-7593-4f00-82f2-e56cef3a2517" /> 
+Add Account
+<img width="1908" height="991" alt="image" src="https://github.com/user-attachments/assets/e79e4b44-4334-4c10-8e37-99c3ced0615a" />
+ Display Accounts
+<img width="1907" height="743" alt="image" src="https://github.com/user-attachments/assets/1df34c39-999e-4807-beb1-519987ba51cd" />
+Deposit
+<img width="1892" height="1012" alt="image" src="https://github.com/user-attachments/assets/23728c29-50d4-4fe1-8b55-2175959b00ad" />
+Withdraw
+<img width="1917" height="1010" alt="image" src="https://github.com/user-attachments/assets/401fa231-b0da-4bc2-aee0-40710ec92192" />
+Stack
+<img width="1830" height="932" alt="image" src="https://github.com/user-attachments/assets/d0f0a556-bf59-41d5-a4de-5e38d394e010" />
+<img width="1292" height="441" alt="image" src="https://github.com/user-attachments/assets/3607af3d-0331-47dc-a1dd-0f7cb4f02e3e" />
+Bill Queue
+<img width="853" height="351" alt="image" src="https://github.com/user-attachments/assets/03e0067a-2274-4c46-9d96-ed66891f3ae5" />
+ATM Menu
+<img width="1115" height="480" alt="image" src="https://github.com/user-attachments/assets/5acd98ab-87d0-4d22-818a-7fe376ffd107" />
+Array
+<img width="1082" height="454" alt="image" src="https://github.com/user-attachments/assets/84b6d129-2ecb-4966-826d-ede1f028ef78" />
 
 
-For this first assignment in Algorithms and Data Structures, I had to solve 10 different tasks using only recursion.
-The main challenge was to avoid using any for or while loops at all,
-focusing instead on base cases and recursive calls to handle everything from basic math to string manipulation.
 
-Task 1. Print Digits of a Number
-Write a recursive function that takes an integer as input and
-prints every digit of the given number on a separate line. 
-<img width="965" height="626" alt="Снимок экрана 2026-03-21 232843" src="https://github.com/user-attachments/assets/91ae6a05-2e2d-48a4-a6d0-97b66f8241b5" />
-Task 2. Average of Elements
-Write a recursive function to calculate the sum of the
-elements, then compute the average using the result.
-<img width="1260" height="622" alt="Снимок экрана 2026-03-21 233703" src="https://github.com/user-attachments/assets/c86a107c-863c-459b-ae45-a1eabde8be3e" />
-Task 3. Prime Number Check
-Write a recursive function that checks whether a number n is
-prime. A prime number is a number that is divisible only by 1 and
-itself.
-<img width="1037" height="621" alt="Снимок экрана 2026-03-21 233906" src="https://github.com/user-attachments/assets/07a4b286-9a60-40a9-98b7-d665dc384863" />
-Task 4. Factorial
-Write a recursive function that calculates n! (factorial).
-<img width="1131" height="498" alt="Снимок экрана 2026-03-21 234030" src="https://github.com/user-attachments/assets/b8879b0e-d863-4539-8ba5-3ff1d4d240e4" />
-Part 2. Recursion with Sequences
+ Conclusion
 
-Task 5. Fibonacci Number
-Write a recursive function to find the n-th Fibonacci number.
-<img width="1071" height="556" alt="Снимок экрана 2026-03-21 234200" src="https://github.com/user-attachments/assets/6583b8ed-6b62-471c-8c58-5fe6a4b0fd69" />
-Task 6. Power Function
-You are given numbers a and n. Write a recursive function that returns: a power n
-<img width="1062" height="510" alt="Снимок экрана 2026-03-21 234410" src="https://github.com/user-attachments/assets/af94c036-97a3-4b3c-809c-7c5625be7a29" />
-Task 7. Reverse Output
-You are given n numbers. Write a recursive function that reads
-and prints the numbers in reverse order without using another
-array.
-<img width="1120" height="658" alt="Снимок экрана 2026-03-21 234559" src="https://github.com/user-attachments/assets/79b79c69-f54e-4fb5-817b-f96172b62bc5" />
-Part 3. Recursion with Strings
+In this project, I used different data structures depending on the situation.  
 
-Task 8. Check Digits in String
-You are given a string s. Write a recursive function that
-checks whether the string contains only digits. Return "Yes" if
-all characters are digits, otherwise return "No".
-<img width="1236" height="484" alt="Снимок экрана 2026-03-21 234653" src="https://github.com/user-attachments/assets/b11d2f0b-fd61-41a7-9790-42d8b2a92a02" />
-Task 9. Count Characters in a String
-Write a recursive function that counts the number of characters in a
-given string. The function should return the total number of characters
-in the string.
-<img width="963" height="558" alt="Снимок экрана 2026-03-21 234806" src="https://github.com/user-attachments/assets/2cc29527-b746-4215-a9d5-8f7df49ad56e" />
-Task 10. Greatest Common Divisor (GCD)
-Write a recursive function that finds the GCD of two numbers
-using the Euclidean Algorithm.
-<img width="983" height="563" alt="Снимок экрана 2026-03-21 234933" src="https://github.com/user-attachments/assets/20b9b072-6edd-465a-8885-b4487090076e" />
+LinkedList is used for storing accounts because it is dynamic.  
+Stack is used for transaction history because it supports undo operations.  
+Queue is used for bill payments and requests because they follow order.  
+Array is used to demonstrate fixed size memory structure.  
+
+This project helped me understand how each data structure works and where it can be used in real applications.
 
 

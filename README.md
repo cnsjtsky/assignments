@@ -1,134 +1,169 @@
- ADS Assignment 3
+ ADS Assignment 4
 Name: Abdysadykov Daniyar
 Group: IT - 2504
-Sorting and Searching Algorithm Analysis System
-About the Project
-This project was created for the Algorithms and Data Structures course.
+ Graph Traversal and Representation System
+ Project Overview
 
-The purpose of the assignment was to implement and compare different sorting and searching algorithms, measure their execution time, and analyze their performance on arrays of different sizes.
+This project demonstrates graph representation and traversal algorithms in Java.
 
-In this project I implemented:
+The graph is implemented using an adjacency list structure.
 
-Selection Sort
-Quick Sort
-Binary Search
+The project includes:
+- Breadth-First Search (BFS)
+- Depth-First Search (DFS)
 
-The program also measures execution time using System.nanoTime().
-Algorithms Used
-Selection Sort
-Selection Sort is a basic sorting algorithm.
+The program also measures traversal execution time using System.nanoTime().
+ Graph Structure
 
-It works by repeatedly finding the minimum element and placing it in the correct position.
+The graph consists of:
+- Vertices (nodes)
+- Edges (connections between vertices)
 
-Characteristics:
+The graph is represented using an adjacency list.
 
-simple algorithm
+Adjacency list stores neighbors of every vertex and is memory efficient for sparse graphs.
 
-easy to understand
 
-works slower on large arrays
+ Classes Description
 
-time complexity: O(n²)
+ Vertex.java
 
-Quick Sort
-Quick Sort is an advanced recursive sorting algorithm.
+Represents a graph vertex.
 
-It chooses a pivot element, divides the array into smaller parts, and recursively sorts them.
+Contains:
+- id field
+- constructor
+- getter
+- toString()
 
-Characteristics:
+ Edge.java
 
-much faster on large arrays
+Represents a connection between two vertices.
 
-recursive algorithm
+Contains:
+- source vertex
+- destination vertex
+- constructor
+- getters
+- toString()
 
-average complexity: O(n log n)
+ Graph.java
 
-Binary Search
-Binary Search is a searching algorithm that works only on sorted arrays.
+Main graph structure.
 
-It repeatedly checks the middle element and removes half of the remaining search area.
+Implements:
+- adjacency list
+- addVertex()
+- addEdge()
+- printGraph()
+- bfs()
+- dfs()
 
-Characteristics:
 
-very fast searching
+### Experiment.java
 
-requires sorted array
-
-complexity: O(log n)
-
-Program Structure
-The project contains four classes.
-
-Main.java
 Responsible for:
-
-generating arrays
-
-running experiments
-
-measuring execution time
-
-displaying results
-
-SelectionSort.java
-Contains implementation of Selection Sort.
-
-QuickSort.java
-Contains implementation of Quick Sort.
-
-BinarySearch.java
-Contains implementation of Binary Search.
-
-Array Sizes Tested
-The algorithms were tested on arrays of different sizes:
-
-10 elements
-
-100 elements
-
-1000 elements
-
-Both random and sorted arrays were used.
-
-Performance Measurement
-Execution time was measured using:
-System.nanoTime()
-The output displays the execution time in nanoseconds.
-Example output:
-Array Size: 1000
-Selection Sort: 7355400 ns
-Quick Sort: 767400 ns
-Binary Search Index: 500
-Binary Search Time: 3200 ns
-The results showed that:
-
-Selection Sort becomes much slower as array size increases.
-
-Quick Sort performs significantly faster on large arrays.
-
-Binary Search is extremely fast because it reduces the search space by half each step.
-
-The experimental results match theoretical Big O complexity.
-
-## Screenshots
-<img width="1919" height="702" alt="image" src="https://github.com/user-attachments/assets/737095c7-056a-479c-81bd-ce5b7c0322db" />
-<img width="1883" height="124" alt="image" src="https://github.com/user-attachments/assets/68da53de-038e-4503-86f3-3f1770318ed9" />
-<img width="1303" height="166" alt="image" src="https://github.com/user-attachments/assets/b3838159-fffa-4ae8-b789-2ee078f1798f" />
+- running traversal algorithms
+- measuring execution time
+- testing graphs of different sizes
 
 
-The algorithms behaved differently depending on the input type.
+### Main.java
 
-Selection Sort showed similar behavior on both random and sorted arrays because it still checks all elements.
+Starts the program and runs experiments.
 
-Quick Sort performed better on random arrays in most cases. The performance depends on pivot selection.
+# Algorithms
 
-Binary Search only works correctly on sorted arrays because it repeatedly divides the search area in half.
-## Reflection
+## Breadth-First Search (BFS)
 
-During this assignment I better understood how algorithm efficiency changes with input size.
+BFS explores the graph level by level.
 
-At first, Selection Sort seemed fast on small arrays, but on larger arrays Quick Sort became much more efficient.
+It uses a Queue data structure.
 
-I also understood why Binary Search is considered one of the fastest searching algorithms and why sorted data is important for it.
+Steps:
+1. Start from selected vertex
+2. Visit neighbors
+3. Add neighbors to queue
+4. Continue until queue becomes empty
 
-The main challenge was understanding recursion in Quick Sort and comparing execution times correctly.
+Time Complexity:
+O(V + E)
+
+Where:
+- V = number of vertices
+- E = number of edges
+
+Use cases:
+- shortest path
+- social networks
+- web crawling
+
+
+# Depth-First Search (DFS)
+
+DFS explores as deep as possible before backtracking.
+
+It uses recursion (stack behavior).
+
+Steps:
+1. Visit current vertex
+2. Move to unvisited neighbor
+3. Continue deeply
+4. Backtrack when needed
+
+Time Complexity:
+O(V + E)
+
+Use cases:
+- path finding
+- cycle detection
+- maze solving
+
+
+# Experimental Results
+
+Graphs tested:
+- 10 vertices
+- 30 vertices
+- 100 vertices
+
+Example results:
+
+| Graph Size | BFS Time | DFS Time |
+|---|---|---|
+| 10 | 1718700 ns | 526700 ns |
+| 30 | 1705300 ns | 1005400 ns |
+| 100 | 4611600 ns | 3844200 ns |
+
+
+# Analysis
+
+As graph size increased, traversal time also increased.
+
+Both BFS and DFS showed complexity close to O(V + E), because each vertex and edge is visited once.
+
+BFS and DFS produced similar traversal order because the graph structure was mostly linear.
+
+BFS is preferred when shortest path or level-order traversal is needed.
+
+DFS is useful for deep exploration and recursive traversal.
+
+One limitation of DFS is possible stack overflow on very deep graphs because of recursion.
+
+
+# Screenshots
+
+- graph structure
+- <img width="268" height="349" alt="image" src="https://github.com/user-attachments/assets/0fccfa4b-9fbd-4a41-84f5-f27b468ac8f3" />
+
+- BFS traversal
+- DFS traversal
+- <img width="1802" height="682" alt="image" src="https://github.com/user-attachments/assets/15b2175d-5783-4dbd-87e4-2883b3a7972a" />
+
+# Reflection
+
+During this assignment I learned how graphs are represented using adjacency lists and how traversal algorithms work.
+
+I better understood the difference between BFS and DFS, especially how BFS uses a queue while DFS uses recursion.
+
+The most challenging part was understanding graph traversal logic and recursion in DFS.

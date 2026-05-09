@@ -1,124 +1,134 @@
- ADS Assignment 2
+ ADS Assignment 3
 Name: Abdysadykov Daniyar
 Group: IT - 2504
-# Mini Banking System (ADS Assignment 2)
-## Ab0out the Project
+Sorting and Searching Algorithm Analysis System
+About the Project
+This project was created for the Algorithms and Data Structures course.
 
-This project is a simple banking system written in Java.  
-The main goal was to use different data structures and show how they work in a real life situation.
+The purpose of the assignment was to implement and compare different sorting and searching algorithms, measure their execution time, and analyze their performance on arrays of different sizes.
 
-In this system, a user can create accounts, deposit and withdraw money, manage transactions, and simulate basic banking operations such as bill payments and account requests.
+In this project I implemented:
 
-## What I Implemented
+Selection Sort
+Quick Sort
+Binary Search
 
-### Bank Accounts using LinkedList
+The program also measures execution time using System.nanoTime().
+Algorithms Used
+Selection Sort
+Selection Sort is a basic sorting algorithm.
 
-All accounts are stored in a LinkedList.  
-I chose LinkedList because the number of accounts can change, and it allows easy addition and searching.
+It works by repeatedly finding the minimum element and placing it in the correct position.
 
-The system supports adding a new account, displaying all accounts, and searching by username.
+Characteristics:
 
-### Deposit and Withdraw
+simple algorithm
 
-Each account has a balance that can be updated.  
-Deposit adds money to the account.  
-Withdraw removes money only if there is enough balance.
+easy to understand
 
-### Transaction History using Stack
+works slower on large arrays
 
-I used a Stack to store transactions.  
+time complexity: O(n²)
 
-This allows viewing the last transaction and undoing the last operation.  
+Quick Sort
+Quick Sort is an advanced recursive sorting algorithm.
 
-Stack works in LIFO order which means the last operation is handled first.
+It chooses a pivot element, divides the array into smaller parts, and recursively sorts them.
 
-### Bill Payment System using Queue
+Characteristics:
 
-Bill payments are stored in a Queue.  
+much faster on large arrays
 
-The first bill that is added is the first one processed.  
+recursive algorithm
 
-This follows FIFO behavior which is similar to a real waiting line.
+average complexity: O(n log n)
 
-### Account Opening Requests using Queue
+Binary Search
+Binary Search is a searching algorithm that works only on sorted arrays.
 
-New account requests are also stored in a Queue.  
+It repeatedly checks the middle element and removes half of the remaining search area.
 
-The admin can view all requests and approve them one by one.  
+Characteristics:
 
-Approved accounts are then added to the main system.
+very fast searching
 
-### Fixed Accounts using Array
+requires sorted array
 
-I used an array to store three predefined accounts.  
+complexity: O(log n)
 
-This part shows how arrays work as a fixed size structure in memory.
+Program Structure
+The project contains four classes.
 
-## Menus in the Program
+Main.java
+Responsible for:
 
-### Bank Menu
+generating arrays
 
-Add account  
-Show accounts  
-Search account  
-Deposit  
-Withdraw  
-Add bill  
-Submit request  
-Show last transaction  
-Undo transaction  
-Show history  
+running experiments
 
-### ATM Menu
+measuring execution time
 
-Check balance  
-Withdraw money  
+displaying results
 
-### Admin Menu
+SelectionSort.java
+Contains implementation of Selection Sort.
 
-View account requests  
-Approve requests  
-View bills  
-Process bills  
+QuickSort.java
+Contains implementation of Quick Sort.
 
-## How to Run the Program
+BinarySearch.java
+Contains implementation of Binary Search.
 
-Open the project in IntelliJ IDEA  
-Run the Main class  
-Follow the menu options in the console  
+Array Sizes Tested
+The algorithms were tested on arrays of different sizes:
+
+10 elements
+
+100 elements
+
+1000 elements
+
+Both random and sorted arrays were used.
+
+Performance Measurement
+Execution time was measured using:
+System.nanoTime()
+The output displays the execution time in nanoseconds.
+Example output:
+Array Size: 1000
+Selection Sort: 7355400 ns
+Quick Sort: 767400 ns
+Binary Search Index: 500
+Binary Search Time: 3200 ns
+The results showed that:
+
+Selection Sort becomes much slower as array size increases.
+
+Quick Sort performs significantly faster on large arrays.
+
+Binary Search is extremely fast because it reduces the search space by half each step.
+
+The experimental results match theoretical Big O complexity.
 
 ## Screenshots
-Main Menu
-<img width="1904" height="1079" alt="image" src="https://github.com/user-attachments/assets/5a3253a5-7593-4f00-82f2-e56cef3a2517" /> 
-Add Account
-<img width="1908" height="991" alt="image" src="https://github.com/user-attachments/assets/e79e4b44-4334-4c10-8e37-99c3ced0615a" />
- Display Accounts
-<img width="1907" height="743" alt="image" src="https://github.com/user-attachments/assets/1df34c39-999e-4807-beb1-519987ba51cd" />
-Deposit
-<img width="1892" height="1012" alt="image" src="https://github.com/user-attachments/assets/23728c29-50d4-4fe1-8b55-2175959b00ad" />
-Withdraw
-<img width="1917" height="1010" alt="image" src="https://github.com/user-attachments/assets/401fa231-b0da-4bc2-aee0-40710ec92192" />
-Stack
-<img width="1830" height="932" alt="image" src="https://github.com/user-attachments/assets/d0f0a556-bf59-41d5-a4de-5e38d394e010" />
-<img width="1292" height="441" alt="image" src="https://github.com/user-attachments/assets/3607af3d-0331-47dc-a1dd-0f7cb4f02e3e" />
-Bill Queue
-<img width="853" height="351" alt="image" src="https://github.com/user-attachments/assets/03e0067a-2274-4c46-9d96-ed66891f3ae5" />
-ATM Menu
-<img width="1115" height="480" alt="image" src="https://github.com/user-attachments/assets/5acd98ab-87d0-4d22-818a-7fe376ffd107" />
-Array
-<img width="1082" height="454" alt="image" src="https://github.com/user-attachments/assets/84b6d129-2ecb-4966-826d-ede1f028ef78" />
+<img width="1919" height="702" alt="image" src="https://github.com/user-attachments/assets/737095c7-056a-479c-81bd-ce5b7c0322db" />
+<img width="1883" height="124" alt="image" src="https://github.com/user-attachments/assets/68da53de-038e-4503-86f3-3f1770318ed9" />
+<img width="1303" height="166" alt="image" src="https://github.com/user-attachments/assets/b3838159-fffa-4ae8-b789-2ee078f1798f" />
 
 
+The algorithms behaved differently depending on the input type.
 
- Conclusion
+Selection Sort showed similar behavior on both random and sorted arrays because it still checks all elements.
 
-In this project, I used different data structures depending on the situation.  
+Quick Sort performed better on random arrays in most cases. The performance depends on pivot selection.
 
-LinkedList is used for storing accounts because it is dynamic.  
-Stack is used for transaction history because it supports undo operations.  
-Queue is used for bill payments and requests because they follow order.  
-Array is used to demonstrate fixed size memory structure.  
+Binary Search only works correctly on sorted arrays because it repeatedly divides the search area in half.
+## Reflection
 
-This project helped me understand how each data structure works and where it can be used in real applications.
+During this assignment I better understood how algorithm efficiency changes with input size.
 
+At first, Selection Sort seemed fast on small arrays, but on larger arrays Quick Sort became much more efficient.
 
+I also understood why Binary Search is considered one of the fastest searching algorithms and why sorted data is important for it.
+
+The main challenge was understanding recursion in Quick Sort and comparing execution times correctly.
